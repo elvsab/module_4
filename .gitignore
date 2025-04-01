@@ -5,3 +5,4 @@ src/playwright-report/
 src/blob-report/
 src/playwright/.cache/
 .DS_Store
+src/node_modules/
