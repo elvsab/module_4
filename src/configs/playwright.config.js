@@ -1,6 +1,9 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
-
+import { fileURLToPath } from 'url';
+import path from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -12,8 +15,8 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
-  testDir: './tests',
+export default defineConfig({ 
+  testDir: path.join(__dirname, '../tests'),
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
